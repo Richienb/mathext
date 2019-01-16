@@ -50,3 +50,14 @@ def add(num1, num2):
 Adding unit tests count towards the total code coverage score and should always be included.
 
 All the other fields, affect the module documentation found [here](https://mathext.richie-bendall.ml/commands/mathext.html#module-mathext).
+
+## Testing guide
+
+Using **GNU Make**, you can execute multiple commands with a single one.
+
+- Force install the latest production version of Quilt: `make inst`
+- Test the code: `make test`
+- Install the dependencies: `make deps`
+- Generate the Mkdocs documentation: `make mdoc`
+- Generate the Sphinx documentation: `make sdoc`
+- Build the PyPi package: `make pack`
