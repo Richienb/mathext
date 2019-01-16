@@ -357,8 +357,8 @@ def fib(num):
     """
     Check if a number is in the Fibonacci sequence.
     
-    :type number: integer
-    :param number: The number to check.
+    :type num: integer
+    :param num: The number to check.
     """
 
     num1 = 1
