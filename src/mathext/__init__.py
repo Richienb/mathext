@@ -2,6 +2,8 @@
 The Math Ext file
 """
 
+import math
+
 def shapesides(inputtocheck, inputtype='shape'):
     """
     Get the sides of a shape.
