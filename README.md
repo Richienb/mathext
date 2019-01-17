@@ -3,7 +3,7 @@
 [![Codecov Score](https://img.shields.io/codecov/c/github/Richienb/mathext/master.svg?style=for-the-badge)](https://codecov.io/gh/Richienb/mathext)
 [![PyPI Status](https://img.shields.io/pypi/status/mathext.svg?style=for-the-badge)](https://pypi.org/project/mathext)
 
-# Mathext
+[![Mathext](https://a.icons8.com/dZbSxfid/P8gu1y/mathext.svg)](#)
 
 An extension to the math library provided by Python.
 
