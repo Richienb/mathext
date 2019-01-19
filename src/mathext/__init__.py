@@ -527,8 +527,7 @@ def hcf(num1, num2):
 
     if sys.version_info[0] >= 3 and sys.version_info[1] >= 5:
         return math.gcd(num1, num2)
-    else:
-        return fractions.gcd(num1, num2)
+    return fractions.gcd(num1, num2)
 
 
 def lcm(num1, num2):
