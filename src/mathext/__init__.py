@@ -335,11 +335,11 @@ def posneg(num):
     :type num: number
     :param num: The number to toggle.
     """
-    if bool(num > 0):
+    if num > 0:
         return num - num * 2
-    elif bool(num < 0):
+    elif num < 0:
         return num + abs(num) * 2
-    elif bool(num == 0):
+    elif num == 0:
         return num
     
 def nothing(variable):
