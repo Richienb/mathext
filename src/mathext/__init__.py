@@ -441,10 +441,7 @@ def num(value):
     :param value: The value to check.
     """
 
-    try:
-        return bool(isinstance(value, (float, int)))
-    except RuntimeError:
-        return False
+    return isinstance(value, Number)
     
 def quadrant(xcoord, ycoord):
     """
