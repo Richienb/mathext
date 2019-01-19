@@ -1,15 +1,15 @@
 # Copyright (c) 2019 Richie Bendall
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -24,6 +24,7 @@ The Math Ext file
 import math
 import fractions
 import sys
+
 
 def shapesides(inputtocheck, inputtype='shape'):
     """
@@ -209,9 +210,11 @@ def amountdiv(num, minnum, maxnum):
 
     # Return the result
     return amount
-    
+
+
 # Set the value of the golden ratio
 phi = (1 + 5**0.5) / 2
+
 
 def factorial(num):
     """
@@ -220,10 +223,11 @@ def factorial(num):
     :type num: integer
     :param num: The number to find the factorial for.
     """
-    
+
     if num == 0:
         return 1
     return num * factorial(num - 1)
+
 
 def triangular(num):
     """
@@ -232,9 +236,10 @@ def triangular(num):
     :type num: number
     :param num: The number to check.
     """
-    
+
     x = (math.sqrt(8 * num + 1) - 1) / 2
     return bool(x - int(x) > 0)
+
 
 def square(num):
     """
@@ -243,8 +248,9 @@ def square(num):
     :type num: number
     :param num: The number to check.
     """
-    
+
     return math.sqrt(num).is_integer()
+
 
 def cube(num):
     """
@@ -253,10 +259,11 @@ def cube(num):
     :type num: number
     :param num: The number to check.
     """
-    
+
     x = num**(1 / 3)
     x = int(round(x))
     return bool(x**3 == num)
+
 
 def even(num):
     """
@@ -265,8 +272,9 @@ def even(num):
     :type num: number
     :param num: The number to check.
     """
-    
+
     return num % 2 == 0
+
 
 def odd(num):
     """
@@ -275,8 +283,9 @@ def odd(num):
     :type num: number
     :param num: The number to check.
     """
-    
+
     return num % 2 != 0
+
 
 def positive(num):
     """
@@ -285,8 +294,9 @@ def positive(num):
     :type num: number
     :param num: The number to check.
     """
-    
+
     return num > 0
+
 
 def negative(num):
     """
@@ -295,8 +305,9 @@ def negative(num):
     :type num: number
     :param num: The number to check.
     """
-    
+
     return num < 0
+
 
 def zero(num):
     """
@@ -305,8 +316,9 @@ def zero(num):
     :type num: number
     :param num: The number to check.
     """
-    
+
     return num == 0
+
 
 def sigmoid(num):
     """
@@ -322,6 +334,7 @@ def sigmoid(num):
     # Return the calculated value
     return 1 / (1 + math.exp(-num))
 
+
 def posneg(num):
     """
     Toggle a number between positive and negative.
@@ -334,9 +347,10 @@ def posneg(num):
     :type num: number
     :param num: The number to toggle.
     """
-    
+
     return -num
-    
+
+
 def nothing(variable):
     """
     Check if a variable is essentially nothing.
@@ -347,7 +361,8 @@ def nothing(variable):
 
     # Return the answer
     return variable in [0, 0.0, False, [], {}, math.nan, "", (), None]
-    
+
+
 def fib(num):
     """
     Check if a number is in the Fibonacci sequence.
@@ -368,7 +383,7 @@ def fib(num):
         else:
             return False
 
-        
+
 def prime(num):
     """
     Check if a number is a prime number.
@@ -392,15 +407,15 @@ def getprime(n):
     :type n: integer
     :param n: The number representing n.
     """
-    
+
     primes = []
     num = 2
     while len(primes) < n:
-    	if prime(num):
-	    	primes.append(num)
-		    num += 1
-	    else:
-		    num += 1
+        if prime(num):
+            primes.append(num)
+            num += 1
+        else:
+            num += 1
     return primes[len(primes) - 1]
 
 
@@ -438,7 +453,8 @@ def num(value):
     """
 
     return isinstance(value, Number)
-    
+
+
 def quadrant(xcoord, ycoord):
     """
     Find the quadrant a pair of coordinates are located in
@@ -508,13 +524,13 @@ def hcf(num1, num2):
     :type num2: number
     :param num2: The second number to find the hcf for
     """
-    
+
     if sys.version_info[0] >= 3 and sys.version_info[1] >= 5:
         return math.gcd(num1, num2)
     else:
         return fractions.gcd(num1, num2)
 
-    
+
 def lcm(num1, num2):
     """
     Find the lowest common multiple of 2 numbers
