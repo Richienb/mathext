@@ -14,6 +14,9 @@ Module contents
 Constants
 ---------
 
+``mathext.`` ``phi``
+    The value of phi.
+
 ``mathext.`` ``about``
     About information.
 
