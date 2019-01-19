@@ -16,9 +16,3 @@ Constants
 
 ``mathext.`` ``phi``
     The value of phi.
-
-``mathext.`` ``about``
-    About information.
-
-``mathext.`` ``ready``
-    A constant which can be checked to verify if Mathext is ready.
