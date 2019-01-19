@@ -372,7 +372,7 @@ def fib(num):
         else:
             return False
 
-
+        
 def prime(num):
     """
     Check if a number is a prime number.
@@ -387,6 +387,25 @@ def prime(num):
         if num % i == 0:
             return False
     return True
+
+
+def getprime(n):
+    """
+    Get the nth prime number
+    
+    :type n: integer
+    :param n: The number representing n.
+    """
+    
+    primes = []
+    num = 2
+    while len(primes) < n:
+    	if prime(num):
+	    	primes.append(num)
+		    num += 1
+	    else:
+		    num += 1
+    return primes[len(primes) - 1]
 
 
 def convertbase(num, base=10):
