@@ -89,7 +89,7 @@ def fracsimplify(numerator, denominator):
     # If the numerator is the same as the denominator
     if numerator == denominator:
         # Return the most simplified fraction
-        return [1, 1]
+        return 1, 1
 
     # If the numerator is larger than the denominator
     elif int(numerator) > int(denominator):
@@ -113,7 +113,7 @@ def fracsimplify(numerator, denominator):
             denominator = denominator / checknum
 
     # Return the integer version of the numerator and denominator
-    return [int(numerator), int(denominator)]
+    return int(numerator), int(denominator)
 
 
 def circleconvert(amount, currentformat, newformat):
