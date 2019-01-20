@@ -708,6 +708,9 @@ def lcm(num1, num2):
     
     >>> lcm(4, 8)
     8
+    
+    >>> lcm(0, 0)
+    0
     """
 
     if num1 == num2 == 0:
