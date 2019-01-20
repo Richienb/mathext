@@ -25,6 +25,7 @@ import math
 import fractions
 import sys
 import string
+from numbers import Number
 
 
 def shapesides(inputtocheck, inputtype='shape'):
