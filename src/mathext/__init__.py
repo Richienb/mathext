@@ -565,7 +565,7 @@ def convertbase(num, base=10):
     nums = alphanum[:base]
     res = ''
     num *= sign
-    whilenum num:
+    while num:
         num, mod = divmod(num, base)
         res += nums[mod]
     return ('' if sign == 1 else '-') + res[::-1]
