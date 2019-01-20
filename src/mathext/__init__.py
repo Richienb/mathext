@@ -42,8 +42,19 @@ def shapesides(inputtocheck, inputtype='shape'):
     >>> shapesides(3, "sides")
     'triangle'
     
+    >>> shapesides("foo", "sides")
+    'ngon'
+    
     >>> shapesides("triangle", "shape")
     3
+    
+    >>> shapesides("foo", "shape")
+    'n'
+    
+    >>> shapesides("foo", "foo")
+    Traceback (most recent call last):
+        ...
+    ValueError: Invalid input type.
     """
 
     # Define the array of sides to a shape
