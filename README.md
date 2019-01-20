@@ -23,7 +23,7 @@ import mathext
 
 ### Example usage
 ```py
-if mathext.ready: print("Mathext is ready.")
+if mathext.triangular(5): print("5 is a triangular number.")
 ```
 
 For more commands, visit [this website](https://mathext.richie-bendall.ml/commands/mathext.html).
