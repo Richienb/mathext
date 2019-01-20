@@ -474,11 +474,11 @@ def fib(num):
     num1 = 1
     num2 = 1
     while True:
-        if num2 < number:
+        if num2 < num:
             tempnum = num2
             num2 += num1
             num1 = tempnum
-        elif num2 == number:
+        elif num2 == num:
             return True
         else:
             return False
