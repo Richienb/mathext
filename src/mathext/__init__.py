@@ -167,6 +167,25 @@ def circleconvert(amount, currentformat, newformat):
     >>> circleconvert(45, "circumference", "diameter")
     14.32394487827058
     
+    >>> circleconvert(45, "foo", "foo")
+    Traceback (most recent call last):
+        ...
+    ValueError: Invalid old format provided.
+    
+    >>> circleconvert(45, "radius", "foo")
+    Traceback (most recent call last):
+        ...
+    ValueError: Invalid new format provided.
+    
+    >>> circleconvert(45, "diameter", "foo")
+    Traceback (most recent call last):
+        ...
+    ValueError: Invalid new format provided.
+    
+    >>> circleconvert(45, "circumference", "foo")
+    Traceback (most recent call last):
+        ...
+    ValueError: Invalid old format provided.
     """
 
     # If the same format was provided
@@ -215,6 +234,12 @@ def circleconvert(amount, currentformat, newformat):
         elif newformat.lower() == 'diameter':
             # Return the converted value
             return amount / math.pi
+        
+        # Raise a warning
+        raise ValueError("Invalid new format provided.")
+        
+    # Raise a warning
+    raise ValueError("Invalid old format provided.")
 
 
 def amountdiv(num, minnum, maxnum):
