@@ -667,20 +667,14 @@ def flipcoords(xcoord, ycoord, axis):
 
     axis = axis.lower()
     if axis == 'y':
-        if xcoord > 0:
-            return xcoord - xcoord - xcoord, ycoord
-        elif xcoord < 0:
-            return xcoord + abs(xcoord) * 2, ycoord
-        elif xcoord == 0:
+        if xcoord == 0:
             return xcoord, ycoord
+        return -xcoord, ycoord
 
     elif axis == 'x':
-        if ycoord > 0:
-            return xcoord, ycoord - ycoord - ycoord
-        elif ycoord < 0:
-            return ycoord + abs(ycoord) * 2, xcoord
-        elif ycoord == 0:
+        if ycoord == 0:
             return xcoord, ycoord
+        return xcoord, -ycoord
 
     raise ValueError("Invalid axis. Neither x nor y was specified.")
 
