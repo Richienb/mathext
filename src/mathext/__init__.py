@@ -647,11 +647,11 @@ def flipcoords(xcoord, ycoord, axis):
     >>> flipcoords(0, -5, "y")
     (0, -5)
     
-    >>> flipcoords(-5, 5, "x")
+    >>> flipcoords(-5, -5, "x")
     (5, 5)
     
     >>> flipcoords(5, 5, "x")
-    (-5, 5)
+    (5, -5)
     
     >>> flipcoords(0, -5, "x")
     (0, 5)
