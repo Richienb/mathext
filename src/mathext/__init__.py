@@ -106,8 +106,13 @@ def shapesides(inputtocheck, inputtype='shape'):
         return shapestosides['n']
 
     if inputtype.lower() == 'sides':
+        # If the shape is in the array
+        if inputtocheck in sidestoshapes:
+            # Return the corresponding sides
+            return sidestoshapes[inputtocheck]
+        
         # If the lowercase version of the shape is in the array
-        if inputtocheck.lower() in sidestoshapes:
+        elif inputtocheck.lower() in sidestoshapes:
             # Return the corresponding sides
             return sidestoshapes[inputtocheck.lower()]
 
