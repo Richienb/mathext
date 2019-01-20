@@ -45,6 +45,9 @@ def shapesides(inputtocheck, inputtype='shape'):
     >>> shapesides("n", "sides")
     'ngon'
     
+    >>> shapesides("N", "sides")
+    'ngon'
+    
     >>> shapesides("foo", "sides")
     'ngon'
     
