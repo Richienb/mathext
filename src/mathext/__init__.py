@@ -555,16 +555,13 @@ def convertbase(num, base=10):
     '32'
     """
 
-    integer = num
-    if not integer:
-        return '0'
-    sign = 1 if integer > 0 else -1
+    sign = 1 if num > 0 else -1
     alphanum = string.digits + string.ascii_lowercase
     nums = alphanum[:base]
     res = ''
-    integer *= sign
-    while integer:
-        integer, mod = divmod(integer, base)
+    num *= sign
+    whilenum num:
+        num, mod = divmod(num, base)
         res += nums[mod]
     return ('' if sign == 1 else '-') + res[::-1]
 
