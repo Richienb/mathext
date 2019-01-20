@@ -80,7 +80,7 @@ def shapesides(inputtocheck, inputtype='shape'):
     }
 
     # Define an array with the flipped version of the sides to a shape
-    sidestoshapes = dictflip(shapestosides)
+    sidestoshapes = {v: k for k, v in shapestosides.items()}
 
     # If the lowercase version of the input type is 'shape'
     if inputtype.lower() == 'shape':
