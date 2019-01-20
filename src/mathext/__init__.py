@@ -481,6 +481,9 @@ def fib(num):
     
     >>> fib(8)
     True
+    
+    >>> fib(4)
+    False
     """
 
     num1 = 1
@@ -490,10 +493,8 @@ def fib(num):
             tempnum = num2
             num2 += num1
             num1 = tempnum
-        elif num2 == num:
-            return True
         else:
-            return False
+            return num2 == num
 
 
 def prime(num):
@@ -505,6 +506,9 @@ def prime(num):
     
     >>> prime(7)
     True
+    
+    >>> prime(1)
+    False
     """
 
     if num == 1:
@@ -643,6 +647,11 @@ def flipcoords(xcoord, ycoord, axis):
     
     >>> flipcoords(-5, 0, "x")
     (-5, 0)
+    
+    >>> flipcoords(5, 5, "foo")
+    Traceback (most recent call last):
+        ...
+    ValueError: Invalid axis. Neither x nor y was specified.
     """
 
     axis = axis.lower()
@@ -653,8 +662,6 @@ def flipcoords(xcoord, ycoord, axis):
             return xcoord + abs(xcoord) * 2, ycoord
         elif xcoord == 0:
             return xcoord, ycoord
-        raise ValueError(
-            "The X coordinate is neither larger, smaller or the same as 0.")
 
     elif axis == 'x':
         if ycoord > 0:
@@ -663,8 +670,7 @@ def flipcoords(xcoord, ycoord, axis):
             return ycoord + abs(ycoord) * 2, xcoord
         elif ycoord == 0:
             return xcoord, ycoord
-        raise ValueError(
-            "The Y coordinate is neither larger, smaller or the same as 0.")
+
     raise ValueError("Invalid axis. Neither x nor y was specified.")
 
 
