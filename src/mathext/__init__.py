@@ -42,6 +42,9 @@ def shapesides(inputtocheck, inputtype='shape'):
     >>> shapesides(3, "sides")
     'triangle'
     
+    >>> shapesides("n", "sides")
+    'ngon'
+    
     >>> shapesides("foo", "sides")
     'ngon'
     
@@ -112,7 +115,7 @@ def shapesides(inputtocheck, inputtype='shape'):
             return sidestoshapes[inputtocheck]
         
         # If the lowercase version of the shape is in the array
-        elif isinstance(inputtocheck, str) and inputtocheck.lower() in sidestoshapes:
+        elif inputtocheck.lower() in sidestoshapes:
             # Return the corresponding sides
             return sidestoshapes[inputtocheck.lower()]
 
