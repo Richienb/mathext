@@ -48,6 +48,9 @@ def shapesides(inputtocheck, inputtype='shape'):
     >>> shapesides("foo", "sides")
     'ngon'
     
+    >>> shapesides("ngon", "shape")
+    'n'
+
     >>> shapesides("triangle", "shape")
     3
     
@@ -106,22 +109,20 @@ def shapesides(inputtocheck, inputtype='shape'):
             return shapestosides[inputtocheck.lower()]
 
         # Return 'n'
-        return shapestosides['n']
-
+        return shapestosides['ngon']
     if inputtype.lower() == 'sides':
         # If the shape is in the array
         if inputtocheck in sidestoshapes:
             # Return the corresponding sides
             return sidestoshapes[inputtocheck]
-        
+
         # If the lowercase version of the shape is in the array
         elif inputtocheck.lower() in sidestoshapes:
             # Return the corresponding sides
             return sidestoshapes[inputtocheck.lower()]
 
         # Return 'ngon'
-        return sidestoshapes['ngon']
-
+        return sidestoshapes['n']
     # Raise a warning
     raise ValueError("Invalid input type.")
 
@@ -254,10 +255,10 @@ def circleconvert(amount, currentformat, newformat):
         elif newformat.lower() == 'diameter':
             # Return the converted value
             return amount / math.pi
-        
+
         # Raise a warning
         raise ValueError("Invalid new format provided.")
-        
+
     # Raise a warning
     raise ValueError("Invalid old format provided.")
 
@@ -477,7 +478,9 @@ def nothing(variable):
     """
 
     # Return the answer
-    return math.isnan(variable) or variable in [0, 0.0, False, [], {}, "", (), None]
+    return math.isnan(variable) or variable in [
+        0, 0.0, False, [], {}, "", (), None
+    ]
 
 
 def fib(num):
