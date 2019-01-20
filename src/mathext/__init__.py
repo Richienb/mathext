@@ -22,7 +22,7 @@ The Math Ext file
 """
 
 import math
-import fractions
+import fractions import Fraction
 import sys
 import string
 from numbers import Number
