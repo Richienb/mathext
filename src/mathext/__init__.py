@@ -24,6 +24,7 @@ The Math Ext file
 import math
 import fractions
 import sys
+import string
 
 
 def shapesides(inputtocheck, inputtype='shape'):
@@ -35,6 +36,12 @@ def shapesides(inputtocheck, inputtype='shape'):
     
     :type inputtype: string
     :param inputtype: The type of input provided. Can be: 'shape', 'sides'.
+    
+    >>> shapesides(3, "sides")
+    'triangle'
+    
+    >>> shapesides("triangle", "shape")
+    3
     """
 
     # Define the array of sides to a shape
@@ -110,10 +117,13 @@ def fracsimplify(numerator, denominator):
     
     :return: The simplified fraction
     :rtype: list
+    
+    >>> fracsimplify(2, 4)
+    (1, 2)
     """
 
     frac = Fraction(numerator, denominator)
-    return [frac.numerator, frac.denominator]
+    return frac.numerator, frac.denominator
 
 
 def circleconvert(amount, currentformat, newformat):
@@ -129,8 +139,33 @@ def circleconvert(amount, currentformat, newformat):
     :type newformat: string
     :param newformat: The intended format of the value.
     
+    >>> circleconvert(45, "radius", "radius")
+    45
+    
     >>> circleconvert(45, "radius", "diameter")
     90
+    
+    >>> circleconvert(45, "radius", "circumference")
+    282.7433388230814
+    
+    >>> circleconvert(45, "diameter", "diameter")
+    45
+    
+    >>> circleconvert(45, "diameter", "radius")
+    22.5
+    
+    >>> circleconvert(45, "diameter", "circumference")
+    141.3716694115407
+    
+    >>> circleconvert(45, "circumference", "circumference")
+    45
+    
+    >>> circleconvert(45, "circumference", "radius")
+    7.16197243913529
+    
+    >>> circleconvert(45, "circumference", "diameter")
+    14.32394487827058
+    
     """
 
     # If the same format was provided
@@ -222,6 +257,9 @@ def factorial(num):
     
     :type num: integer
     :param num: The number to find the factorial for.
+    
+    >>> factorial(4)
+    24
     """
 
     if num == 0:
@@ -235,6 +273,9 @@ def triangular(num):
     
     :type num: number
     :param num: The number to check.
+    
+    >>> triangular(5)
+    True
     """
 
     x = (math.sqrt(8 * num + 1) - 1) / 2
@@ -247,6 +288,9 @@ def square(num):
     
     :type num: number
     :param num: The number to check.
+    
+    >>> square(4)
+    True
     """
 
     return math.sqrt(num).is_integer()
@@ -258,6 +302,9 @@ def cube(num):
     
     :type num: number
     :param num: The number to check.
+    
+    >>> cube(9)
+    True
     """
 
     x = num**(1 / 3)
@@ -271,6 +318,9 @@ def even(num):
     
     :type num: number
     :param num: The number to check.
+    
+    >>> even(2)
+    True
     """
 
     return num % 2 == 0
@@ -282,6 +332,9 @@ def odd(num):
     
     :type num: number
     :param num: The number to check.
+    
+    >>> odd(3)
+    True
     """
 
     return num % 2 != 0
@@ -293,6 +346,9 @@ def positive(num):
     
     :type num: number
     :param num: The number to check.
+    
+    >>> positive(1)
+    True
     """
 
     return num > 0
@@ -304,6 +360,9 @@ def negative(num):
     
     :type num: number
     :param num: The number to check.
+    
+    >>> negative(-1)
+    True
     """
 
     return num < 0
@@ -315,6 +374,9 @@ def zero(num):
     
     :type num: number
     :param num: The number to check.
+    
+    >>> zero(0)
+    True
     """
 
     return num == 0
@@ -323,10 +385,13 @@ def zero(num):
 def sigmoid(num):
     """
     Find the sigmoid of a number.
+    
     :type number: number
     :param number: The number to find the sigmoid of
+    
     :return: The result of the sigmoid
     :rtype: number
+    
     >>> sigmoid(1)
     0.7310585786300049
     """
@@ -346,6 +411,9 @@ def posneg(num):
     
     :type num: number
     :param num: The number to toggle.
+    
+    >>> posneg(2)
+    -2
     """
 
     return -num
@@ -357,6 +425,9 @@ def nothing(variable):
     
     :type variable: variable
     :param variable: The variable to check.
+    
+    >>> nothing(0)
+    True
     """
 
     # Return the answer
@@ -369,6 +440,9 @@ def fib(num):
     
     :type num: integer
     :param num: The number to check.
+    
+    >>> fib(8)
+    True
     """
 
     num1 = 1
@@ -390,6 +464,9 @@ def prime(num):
     
     :type num: integer
     :param num: The number to check.
+    
+    >>> prime(7)
+    True
     """
 
     if num == 1:
@@ -406,6 +483,9 @@ def getprime(n):
     
     :type n: integer
     :param n: The number representing n.
+    
+    >>> getprime(3)
+    5
     """
 
     primes = []
@@ -428,6 +508,9 @@ def convertbase(num, base=10):
     
     :type base: integer
     :param base: The base to convert to.
+    
+    >>> convertbase(20, 6)
+    '32'
     """
 
     integer = num
@@ -450,6 +533,9 @@ def num(value):
     
     :type value: object
     :param value: The value to check.
+    
+    >>> num(1)
+    True
     """
 
     return isinstance(value, Number)
@@ -464,6 +550,18 @@ def quadrant(xcoord, ycoord):
     
     :type ycoord: integer
     :param ycoord: The y coordinate to find the quadrant for
+    
+    >>> quadrant(-5, 5)
+    1
+    
+    >>> quadrant(5, 5)
+    2
+    
+    >>> quadrant(5, -5)
+    3
+    
+    >>> quadrant(-5, -5)
+    4
     """
 
     xneg = bool(xcoord < 0)
@@ -489,26 +587,44 @@ def flipcoords(xcoord, ycoord, axis):
     
     :type axis: string
     :param axis: The axis to flip across. Could be 'x' or 'y'
+    
+    >>> flipcoords(-5, 5, "y")
+    (5, 5)
+    
+    >>> flipcoords(5, 5, "y")
+    (-5, 5)
+    
+    >>> flipcoords(0, -5, "y")
+    (0, -5)
+    
+    >>> flipcoords(-5, 5, "x")
+    (5, 5)
+    
+    >>> flipcoords(5, 5, "x")
+    (-5, 5)
+    
+    >>> flipcoords(-5, 0, "x")
+    (-5, 0)
     """
 
     axis = axis.lower()
     if axis == 'y':
         if xcoord > 0:
-            return str(xcoord - xcoord - xcoord) + ', ' + str(ycoord)
+            return sxcoord - xcoord - xcoord, ycoord
         elif xcoord < 0:
-            return str(xcoord + abs(xcoord) * 2) + ', ' + str(ycoord)
+            return xcoord + abs(xcoord) * 2, ycoord
         elif xcoord == 0:
-            return str(xcoord) + ', ' + str(ycoord)
+            return xcoord, ycoord
         raise ValueError(
             "The X coordinate is neither larger, smaller or the same as 0.")
 
     elif axis == 'x':
         if ycoord > 0:
-            return str(xcoord) + ', ' + str(ycoord - ycoord - ycoord)
+            return xcoord, ycoord - ycoord - ycoord
         elif ycoord < 0:
-            return str(ycoord + abs(ycoord) * 2) + ', ' + str(xcoord)
+            return ycoord + abs(ycoord) * 2, xcoord
         elif ycoord == 0:
-            return str(xcoord) + ', ' + str(ycoord)
+            return xcoord, ycoord
         raise ValueError(
             "The Y coordinate is neither larger, smaller or the same as 0.")
     raise ValueError("Invalid axis. Neither x nor y was specified.")
@@ -523,6 +639,9 @@ def hcf(num1, num2):
     
     :type num2: number
     :param num2: The second number to find the hcf for
+    
+    >>> hcf(5, 10)
+    5
     """
 
     if sys.version_info[0] >= 3 and sys.version_info[1] >= 5:
@@ -539,6 +658,9 @@ def lcm(num1, num2):
     
     :type num2: number
     :param num2: The second number to find the lcm for
+    
+    >>> lcm(4, 8)
+    2
     """
 
     if num1 == num2 == 0:
@@ -555,6 +677,9 @@ def pyth(first, second):
     
     :type second: number
     :param second: The length of the second axis (x or y)
+    
+    >>> pyth(3, 5)
+    7.5
     """
 
     return (first * second) / 2
