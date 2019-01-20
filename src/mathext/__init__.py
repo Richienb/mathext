@@ -458,7 +458,7 @@ def nothing(variable):
     """
 
     # Return the answer
-    return variable in [0, 0.0, False, [], {}, math.nan, "", (), None]
+    return math.isnan(variable) or variable in [0, 0.0, False, [], {}, "", (), None]
 
 
 def fib(num):
