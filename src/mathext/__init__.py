@@ -636,7 +636,7 @@ def flipcoords(xcoord, ycoord, axis):
     axis = axis.lower()
     if axis == 'y':
         if xcoord > 0:
-            return sxcoord - xcoord - xcoord, ycoord
+            return xcoord - xcoord - xcoord, ycoord
         elif xcoord < 0:
             return xcoord + abs(xcoord) * 2, ycoord
         elif xcoord == 0:
