@@ -304,7 +304,7 @@ def cube(num):
     :type num: number
     :param num: The number to check.
     
-    >>> cube(9)
+    >>> cube(8)
     True
     """
 
@@ -552,16 +552,16 @@ def quadrant(xcoord, ycoord):
     :type ycoord: integer
     :param ycoord: The y coordinate to find the quadrant for
     
-    >>> quadrant(-5, 5)
+    >>> quadrant(5, 5)
     1
     
-    >>> quadrant(5, 5)
+    >>> quadrant(-5, 5)
     2
     
-    >>> quadrant(5, -5)
+    >>> quadrant(-5, -5)
     3
     
-    >>> quadrant(-5, -5)
+    >>> quadrant(5, -5)
     4
     """
 
