@@ -661,7 +661,7 @@ def lcm(num1, num2):
     :param num2: The second number to find the lcm for
     
     >>> lcm(4, 8)
-    2
+    8
     """
 
     if num1 == num2 == 0:
