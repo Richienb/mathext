@@ -167,7 +167,7 @@ def circleconvert(amount, currentformat, newformat):
     >>> circleconvert(45, "circumference", "diameter")
     14.32394487827058
     
-    >>> circleconvert(45, "foo", "foo")
+    >>> circleconvert(45, "foo1", "foo2")
     Traceback (most recent call last):
         ...
     ValueError: Invalid old format provided.
@@ -185,7 +185,7 @@ def circleconvert(amount, currentformat, newformat):
     >>> circleconvert(45, "circumference", "foo")
     Traceback (most recent call last):
         ...
-    ValueError: Invalid old format provided.
+    ValueError: Invalid new format provided.
     """
 
     # If the same format was provided
