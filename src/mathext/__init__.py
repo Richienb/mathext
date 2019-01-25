@@ -525,7 +525,23 @@ def prime(num):
     False
     """
 
-    return num <= 3 or (num + 1) % 6 == 0 or (num - 1) % 6 == 0
+    if num in (2, 3):
+        return True
+
+    if num == 1 or num % 2 == 0 or num % 3 == 0:
+        return False
+
+    i = 5
+    w = 2
+
+    while i * i <= num:
+        if num % i == 0:
+            return False
+
+        i += w
+        w = 6 - w
+
+    return True
 
 
 def getprime(n):
